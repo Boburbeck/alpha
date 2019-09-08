@@ -1,0 +1,46 @@
+#Users
+-
+  model: "main.User"
+  pk: 1
+  fields:
+    first_name: "Firstname1"
+    last_name: "Secondname1"
+    username: "test1@example.com"
+    password: "pbkdf2_sha256$30000$rirjQwUOYtl8$EB8NuU4D9x005OMLkCZ9NsTX9TpZ3oQLjsg9gPqIc2Q="
+    staff: True
+    is_admin: True
+    created_date: "2019-01-01 00:00:00+00:00"
+    modified_date: "2019-01-01 00:00:00+00:00"
+
+- model: "main.User"
+  pk: 2
+  fields:
+    first_name: "Firstname2"
+    last_name: "Secondname2"
+    username: "test2@example.com"
+    password: "pbkdf2_sha256$30000$rirjQwUOYtl8$EB8NuU4D9x005OMLkCZ9NsTX9TpZ3oQLjsg9gPqIc2Q="
+    is_admin: False
+    created_date: "2019-01-01 00:00:00+00:00"
+    modified_date: "2019-01-01 00:00:00+00:00"
+
+- model: "main.User"
+  pk: 3
+  fields:
+    first_name: "Firstname3"
+    last_name: "Secondname3"
+    username: "test3@example.com"
+    password: "pbkdf2_sha256$30000$rirjQwUOYtl8$EB8NuU4D9x005OMLkCZ9NsTX9TpZ3oQLjsg9gPqIc2Q="
+    is_admin: False
+    created_date: "2019-01-01 00:00:00+00:00"
+    modified_date: "2019-01-01 00:00:00+00:00"
+
+- model: "main.User"
+  pk: 4
+  fields:
+    first_name: "Firstname4"
+    last_name: "Secondname4"
+    username: "test4@example.com"
+    password: "pbkdf2_sha256$30000$rirjQwUOYtl8$EB8NuU4D9x005OMLkCZ9NsTX9TpZ3oQLjsg9gPqIc2Q="
+    is_admin: False
+    created_date: "2019-01-01 00:00:00+00:00"
+    modified_date: "2019-01-01 00:00:00+00:00"
