@@ -1,0 +1,9 @@
+.idea
+.venv
+*.pyc
+static
+media
+fennec/settings_dev.py
+.DS_Store
+.vscode
+pytest.ini
