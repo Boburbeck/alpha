@@ -1,0 +1,30 @@
+#Client
+- model: "main.Client"
+  pk: 1
+  fields:
+    first_name: "First Client Name"
+    last_name: "Second Client Last Name"
+    inn: "C-001"
+    phone_number: "998999999999"
+    created_date: "2019-02-01 00:00:00+00:00"
+    modified_date: "2019-02-01 00:00:00+00:00"
+
+- model: "main.Client"
+  pk: 2
+  fields:
+    first_name: " Second Client Name"
+    last_name: "Second Client Last Name"
+    inn: "C-002"
+    phone_number: "998997777777"
+    created_date: "2019-02-02 00:00:00+00:00"
+    modified_date: "2019-02-02 00:00:00+00:00"
+
+- model: "main.Client"
+  pk: 3
+  fields:
+    first_name: "Third Client Name"
+    last_name: "Third Client Name"
+    inn: "C-003"
+    phone_number: "998995555555"
+    created_date: "2019-02-03 00:00:00+00:00"
+    modified_date: "2019-02-03 00:00:00+00:00"

@@ -1,0 +1,70 @@
+#Product
+- model: "main.Product"
+  pk: 1
+  fields:
+    category: 2
+    name: "Sub Category 1 Product 1"
+    code: "P-001"
+    comment: "Good One"
+    created_date: "2019-01-01 00:00:00+00:00"
+    modified_date: "2019-01-01 00:00:00+00:00"
+
+- model: "main.Product"
+  pk: 2
+  fields:
+    category: 2
+    name: "Sub Category 1 Product 2"
+    code: "P-002"
+    comment: "Good One"
+    created_date: "2019-01-02 00:00:00+00:00"
+    modified_date: "2019-01-02 00:00:00+00:00"
+
+- model: "main.Product"
+  pk: 3
+  fields:
+    category: 3
+    name: "Sub Category 2 Product 1"
+    code: "P-003"
+    comment: "Good One"
+    created_date: "2019-01-03 00:00:00+00:00"
+    modified_date: "2019-01-03 00:00:00+00:00"
+
+- model: "main.Product"
+  pk: 4
+  fields:
+    category: 3
+    name: "Sub Category 2 Product 2"
+    code: "P-004"
+    comment: "Good One"
+    created_date: "2019-01-04 00:00:00+00:00"
+    modified_date: "2019-01-04 00:00:00+00:00"
+
+- model: "main.Product"
+  pk: 5
+  fields:
+    category: 4
+    name: "Sub Category 3 Product 1"
+    code: "P-005"
+    comment: "Good One"
+    created_date: "2019-01-05 00:00:00+00:00"
+    modified_date: "2019-01-05 00:00:00+00:00"
+
+- model: "main.Product"
+  pk: 6
+  fields:
+    category: 4
+    name: "Sub Category 3 Product 2"
+    code: "P-006"
+    comment: "Good One"
+    created_date: "2019-01-06 00:00:00+00:00"
+    modified_date: "2019-01-06 00:00:00+00:00"
+
+- model: "main.Product"
+  pk: 7
+  fields:
+    category: 2
+    name: "Sub Category 1 Product 3"
+    code: "P-007"
+    comment: "Good One"
+    created_date: "2019-01-07 00:00:00+00:00"
+    modified_date: "2019-01-07 00:00:00+00:00"

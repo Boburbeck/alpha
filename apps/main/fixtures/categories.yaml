@@ -1,0 +1,35 @@
+#Categories
+- model: "main.Category"
+  pk: 1
+  fields:
+    name: "Parent Category"
+    is_parent: True
+    created_date: "2019-01-01 00:00:00+00:00"
+    modified_date: "2019-01-01 00:00:00+00:00"
+
+- model: "main.Category"
+  pk: 2
+  fields:
+    name: "Sub Category 1"
+    is_parent: False
+    parent: 1
+    created_date: "2019-01-01 00:00:00+00:00"
+    modified_date: "2019-01-01 00:00:00+00:00"
+
+- model: "main.Category"
+  pk: 3
+  fields:
+    name: "Sub Category 2"
+    is_parent: False
+    parent: 1
+    created_date: "2019-01-01 00:00:00+00:00"
+    modified_date: "2019-01-01 00:00:00+00:00"
+
+- model: "main.Category"
+  pk: 4
+  fields:
+    name: "Sub Category 3"
+    is_parent: False
+    parent: 1
+    created_date: "2019-01-01 00:00:00+00:00"
+    modified_date: "2019-01-01 00:00:00+00:00"

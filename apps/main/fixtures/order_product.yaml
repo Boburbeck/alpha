@@ -1,0 +1,209 @@
+#OrderProduct
+- model: "main.OrderProduct"
+  pk: 1
+  fields:
+    order: 1
+    product: 1
+    amount: 3
+    price: '21000'
+    internal_price: '21000'
+    created_date: "2019-03-01 00:00:00+00:00"
+    modified_date: "2019-03-01 00:00:00+00:00"
+
+- model: "main.OrderProduct"
+  pk: 2
+  fields:
+    order: 1
+    product: 2
+    amount: 2
+    price: '17000'
+    internal_price: '17000'
+    created_date: "2019-03-01 00:00:00+00:00"
+    modified_date: "2019-03-01 00:00:00+00:00"
+
+- model: "main.OrderProduct"
+  pk: 3
+  fields:
+    order: 1
+    product: 3
+    amount: 1
+    price: '4000'
+    internal_price: '4000'
+    created_date: "2019-03-01 00:00:00+00:00"
+    modified_date: "2019-03-01 00:00:00+00:00"
+
+- model: "main.OrderProduct"
+  pk: 4
+  fields:
+    order: 1
+    product: 4
+    amount: 4
+    price: '18000'
+    internal_price: '18000'
+    created_date: "2019-03-01 00:00:00+00:00"
+    modified_date: "2019-03-01 00:00:00+00:00"
+
+- model: "main.OrderProduct"
+  pk: 5
+  fields:
+    order: 1
+    product: 5
+    amount: 3
+    price: '11100'
+    internal_price: '11100'
+    created_date: "2019-03-01 00:00:00+00:00"
+    modified_date: "2019-03-01 00:00:00+00:00"
+
+- model: "main.OrderProduct"
+  pk: 6
+  fields:
+    order: 1
+    product: 6
+    amount: 2
+    price: '11000'
+    internal_price: '11000'
+    created_date: "2019-03-01 00:00:00+00:00"
+    modified_date: "2019-03-01 00:00:00+00:00"
+
+- model: "main.OrderProduct"
+  pk: 7
+  fields:
+    order: 1
+    product: 7
+    amount: 4
+    price: '8800'
+    internal_price: '8800'
+    created_date: "2019-03-01 00:00:00+00:00"
+    modified_date: "2019-03-01 00:00:00+00:00"
+
+- model: "main.OrderProduct"
+  pk: 8
+  fields:
+    order: 2
+    product: 3
+    amount: 4
+    price: '12000'
+    internal_price: '12000'
+    created_date: "2019-04-01 00:00:00+00:00"
+    modified_date: "2019-04-01 00:00:00+00:00"
+
+- model: "main.OrderProduct"
+  pk: 9
+  fields:
+    order: 2
+    product: 4
+    amount: 4
+    price: '18000'
+    internal_price: '18000'
+    created_date: "2019-04-01 00:00:00+00:00"
+    modified_date: "2019-04-01 00:00:00+00:00"
+
+- model: "main.OrderProduct"
+  pk: 10
+  fields:
+    order: 3
+    product: 7
+    amount: 2
+    price: '4400'
+    internal_price: '4400'
+    created_date: "2019-04-20 00:00:00+00:00"
+    modified_date: "2019-04-20 00:00:00+00:00"
+
+- model: "main.OrderProduct"
+  pk: 11
+  fields:
+    order: 3
+    product: 2
+    amount: 3
+    price: '25500'
+    internal_price: '25500'
+    created_date: "2019-04-20 00:00:00+00:00"
+    modified_date: "2019-04-20 00:00:00+00:00"
+
+- model: "main.OrderProduct"
+  pk: 12
+  fields:
+    order: 3
+    product: 1
+    amount: 5
+    price: '35000'
+    internal_price: '35000'
+    created_date: "2019-04-20 00:00:00+00:00"
+    modified_date: "2019-04-20 00:00:00+00:00"
+
+- model: "main.OrderProduct"
+  pk: 13
+  fields:
+    order: 4
+    product: 2
+    amount: 2
+    price: '17000'
+    internal_price: '17000'
+    created_date: "2019-04-25 00:00:00+00:00"
+    modified_date: "2019-04-25 00:00:00+00:00"
+
+- model: "main.OrderProduct"
+  pk: 14
+  fields:
+    order: 5
+    product: 1
+    amount: 3
+    price: '21000'
+    internal_price: '21000'
+    created_date: "2019-05-05 00:00:00+00:00"
+    modified_date: "2019-05-05 00:00:00+00:00"
+
+- model: "main.OrderProduct"
+  pk: 15
+  fields:
+    order: 5
+    product: 6
+    amount: 5
+    price: '27500'
+    internal_price: '27500'
+    created_date: "2019-05-05 00:00:00+00:00"
+    modified_date: "2019-05-05 00:00:00+00:00"
+
+- model: "main.OrderProduct"
+  pk: 16
+  fields:
+    order: 6
+    product: 2
+    amount: 5
+    price: '42500'
+    internal_price: '42500'
+    created_date: "2019-06-01 00:00:00+00:00"
+    modified_date: "2019-06-01 00:00:00+00:00"
+
+- model: "main.OrderProduct"
+  pk: 17
+  fields:
+    order: 6
+    product: 4
+    amount: 4
+    price: '18000'
+    internal_price: '18000'
+    created_date: "2019-06-01 00:00:00+00:00"
+    modified_date: "2019-06-01 00:00:00+00:00"
+
+- model: "main.OrderProduct"
+  pk: 18
+  fields:
+    order: 6
+    product: 6
+    amount: 3
+    price: '16500'
+    internal_price: '16500'
+    created_date: "2019-06-01 00:00:00+00:00"
+    modified_date: "2019-06-01 00:00:00+00:00"
+
+- model: "main.OrderProduct"
+  pk: 19
+  fields:
+    order: 6
+    product: 1
+    amount: 2
+    price: '14000'
+    internal_price: '14000'
+    created_date: "2019-06-01 00:00:00+00:00"
+    modified_date: "2019-06-01 00:00:00+00:00"
