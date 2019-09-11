@@ -11,6 +11,9 @@ class Client(DeleteMixin, BaseModel):
     phone_number = models.CharField(max_length=255, null=True, blank=True)
     in_blacklist = models.BooleanField(default=False)
 
+    def __str__(self):
+        return self.first_name
+
     def get_full_name(self):
         return '%s %s' % (self.first_name, self.last_name)
 

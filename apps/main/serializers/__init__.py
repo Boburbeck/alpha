@@ -7,3 +7,7 @@ from main.serializers.net_cost import NetCostSelectSerializer
 from main.serializers.net_cost import NetCostModelSerializer
 from main.serializers.sold_cost import SoldCostSelectSerializer
 from main.serializers.sold_cost import SoldCostModelSerializer
+from main.serializers.order_product import OrderProductSelectSerializer
+from main.serializers.order_product import OrderProductModelSerializer
+from main.serializers.client import ClientSelectSerializer
+from main.serializers.order import OrderModelSerializer
