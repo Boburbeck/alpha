@@ -8,12 +8,6 @@ from main.serializers import UserSelectSerializer
 
 
 class OrderStatsSerializer(serializers.ModelSerializer):
-    f_exp = serializers.SerializerMethodField()
-
-    def get_f_Exp(self, obj):
-        result = F(obj.total_balace) + 100
-        return result
-
     class Meta:
         model = Order
         fields = (
@@ -32,10 +26,17 @@ class OrderStatsSerializer(serializers.ModelSerializer):
             'delivered',
             'created_date',
             'products',
-            'f_exp'
         )
 
     def to_representation(self, instance):
         self.fields['cashier'] = UserSelectSerializer()
         self.fields['client'] = ClientSelectSerializer()
         return super(OrderStatsSerializer, self).to_representation(instance)
+
+
+class OrderSubquery(serializers.Serializer):
+    id = serializers.IntegerField()
+    children_total = serializers.DecimalField(max_digits=20, decimal_places=9)
+    internal_total_price = serializers.DecimalField(max_digits=20, decimal_places=9)
+    internal_total_balance = serializers.DecimalField(max_digits=20, decimal_places=9)
+    internal_delivery_price = serializers.DecimalField(max_digits=20, decimal_places=9)
