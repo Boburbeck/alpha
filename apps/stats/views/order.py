@@ -35,14 +35,3 @@ class OrderStatsViewSet(viewsets.GenericViewSet, mixins.ListModelMixin, ):
 
         serializer = OrderSubqueryCashier(order, many=True)
         return Response(serializer.data)
-
-    @action(methods=["GET"], detail=False, )
-    def sub_by_single_cashier(self, request):
-        cashier = ValidateCashier(data=request.GET)
-        cashier.is_valid(raise_exception=True)
-        cashier = cashier.validated_data.get('cashier')
-        order = Order.objects.by_cashier(cashier)
-        order = order.order_by('-sales')
-
-        serializer = OrderSubqueryCashier(order, many=True)
-        return Response(serializer.data)
