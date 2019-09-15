@@ -40,3 +40,15 @@ class OrderSubquery(serializers.Serializer):
     internal_total_price = serializers.DecimalField(max_digits=20, decimal_places=9)
     internal_total_balance = serializers.DecimalField(max_digits=20, decimal_places=9)
     internal_delivery_price = serializers.DecimalField(max_digits=20, decimal_places=9)
+
+
+class OrderSubqueryCashier(serializers.Serializer):
+    id = serializers.IntegerField()
+    first_name = serializers.CharField(max_length=255)
+    last_name = serializers.CharField(max_length=255)
+    sales = serializers.DecimalField(max_digits=20, decimal_places=9)
+
+
+class ValidateCashier(serializers.Serializer):
+    from main.models import User
+    cashier = serializers.PrimaryKeyRelatedField(queryset=User.objects.all(), required=False)

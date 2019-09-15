@@ -55,13 +55,24 @@ class OrderStatisticsTest(APITestCase):
         self.assertEqual(response.data[1]['children_total'], '48500.000000000')
         self.assertEqual(response.data[1]['internal_total_price'], '48500.000000000')
 
-    # def test_detail(self):
-    #     url = reverse(self.detail_url, kwargs={'pk': 5})
-    #     response = self.client.get(url)
-    #     self.assertEqual(response.status_code, status.HTTP_200_OK, response.data)
-    #     self.assertEqual(response.data['id'], 5)
-    #     self.assertEqual(response.data['price'], '1700.000000000')
-    #
+    def test_by_cashier(self):
+        url = '%ssub_by_cashier/' % reverse(self.list_url)
+        response = self.client.get(url)
+
+        self.assertEqual(response.status_code, status.HTTP_200_OK)
+        self.assertEqual(response.data[0]['id'], 4)
+        self.assertEqual(response.data[0]['first_name'], 'Firstname4')
+        self.assertEqual(response.data[0]['sales'], '155900.000000000')
+
+    def test_by_single_cashier(self):
+        url = '%ssub_by_cashier/?cashier=4' % reverse(self.list_url)
+        response = self.client.get(url)
+
+        self.assertEqual(response.status_code, status.HTTP_200_OK)
+        self.assertEqual(response.data[0]['id'], 4)
+        self.assertEqual(response.data[0]['first_name'], 'Firstname4')
+        self.assertEqual(response.data[0]['sales'], '155900.000000000')
+
     # def test_create(self):
     #     url = reverse(self.list_url)
     #     response = self.client.post(url, data=self.data, format='json')
