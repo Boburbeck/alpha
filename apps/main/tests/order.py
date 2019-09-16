@@ -11,20 +11,33 @@ from rest_framework.test import APITestCase
 from main.tests.test_users import get_token
 
 
-class NetCostCrudTest(APITestCase):
+class OrderCrudTest(APITestCase):
     fixtures = [
         'users.yaml',
         'categories.yaml',
+        'clients.yaml',
         'products.yaml',
-        'net_costs.yaml',
+        'sold_costs.yaml',
+        'order_products.yaml',
+        'orders.yaml',
+
     ]
     data = {
-        "price": "15000",
-        "product": 1,
+        "cashier": 2,
+        "payment_type": "cash",
+        "client": 2,
+        "deliver": False,
+        "order_number": 789456,
+        "total_balance": "12000",
+        "products": [
+            {"product": 1, "amount": "3"},
+            {"product": 2, "amount": "4"},
+            {"product": 3, "amount": "2"},
+        ]
     }
 
-    list_url = 'main:net_cost-list'
-    detail_url = 'main:net_cost-detail'
+    list_url = 'main:order-list'
+    detail_url = 'main:order-detail'
 
     def setUp(self):
         self.client.credentials(HTTP_AUTHORIZATION='Token ' + get_token())
@@ -48,8 +61,8 @@ class NetCostCrudTest(APITestCase):
         url = reverse(self.list_url)
         response = self.client.post(url, data=self.data, format='json')
         self.assertEqual(response.status_code, status.HTTP_201_CREATED)
-        self.assertEqual(response.data['price'], '15000.000000000')
-        self.assertEqual(response.data['product']['id'], 1)
+        self.assertEqual(response.data['total_price'], '63000.000000000')
+        self.assertEqual(response.data['id'], 7)
 
     def test_crate_fail(self):
         data = {"price": "1500"}

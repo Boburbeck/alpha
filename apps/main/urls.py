@@ -6,11 +6,13 @@ from main.views import UserAuthView
 from main.views import UserViewSet
 from main.views import NetCostModelViewSet
 from main.views import SoldCostModelViewSet
+from main.views import OrderModelViewSet
 
 router = DefaultRouter()
 router.register(r'user', UserViewSet, 'user')
 router.register(r'net_cost', NetCostModelViewSet, 'net_cost')
 router.register(r'sold_cost', SoldCostModelViewSet, 'sold_cost')
+router.register(r'order', OrderModelViewSet, 'order')
 
 group_router = DefaultRouter()
 
