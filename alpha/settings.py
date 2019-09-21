@@ -33,6 +33,7 @@ PROJECT_APPS = [
     'main',
     'development',
     'stats',
+    'stock',
     ]
 
 INSTALLED_APPS = [

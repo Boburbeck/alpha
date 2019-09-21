@@ -1,0 +1,20 @@
+#Stocks
+- model: "main.Stock"
+  pk: 1
+  fields:
+    name: "Test Stock 1"
+    employees: [1, 2, 3]
+    address: "65-20 Booth Street"
+    created_by: 1
+    created_date: "2019-01-01 00:00:00+00:00"
+    modified_date: "2019-01-01 00:00:00+00:00"
+
+- model: "main.Stock"
+  pk: 2
+  fields:
+    name: "Test Stock 2"
+    employees: [2, 3, 4]
+    address: "65-20 Booth Street"
+    created_by: 1
+    created_date: "2019-01-01 00:00:00+00:00"
+    modified_date: "2019-01-01 00:00:00+00:00"
