@@ -3,6 +3,8 @@ from main.serializers.user import UserModelSerializer
 from main.serializers.user import UserRegisterSerializer
 from main.serializers.user import UserSelectSerializer
 from main.serializers.product import ProductSelectSerializer
+from main.serializers.product_balance import ProductBalanceSelectSerializer
+from main.serializers.product_balance import ProductBalanceModelSerializer
 from main.serializers.net_cost import NetCostSelectSerializer
 from main.serializers.net_cost import NetCostModelSerializer
 from main.serializers.sold_cost import SoldCostSelectSerializer
