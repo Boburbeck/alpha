@@ -14,7 +14,7 @@ from main.tests.test_users import get_token
 class SoldCostCrudTest(APITestCase):
     fixtures = [
         'users.yaml',
-        'stocks.yaml',
+        'categories.yaml',
         'products.yaml',
         'sold_costs.yaml',
     ]

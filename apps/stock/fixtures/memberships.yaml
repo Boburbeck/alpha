@@ -1,0 +1,60 @@
+#Membership
+- model: "main.Membership"
+  pk: 1
+  fields:
+    stock: 1
+    member: 1
+    date_joined: "2019-01-01"
+    role: "employee"
+    created_date: "2019-01-01 00:00:00+00:00"
+    modified_date: "2019-01-01 00:00:00+00:00"
+
+- model: "main.Membership"
+  pk: 2
+  fields:
+    stock: 1
+    member: 2
+    date_joined: "2019-02-02"
+    role: "employee"
+    created_date: "2019-02-02 00:00:00+00:00"
+    modified_date: "2019-02-02 00:00:00+00:00"
+
+- model: "main.Membership"
+  pk: 3
+  fields:
+    stock: 1
+    member: 3
+    date_joined: "2019-03-03"
+    role: "employee"
+    created_date: "2019-03-03 00:00:00+00:00"
+    modified_date: "2019-03-03 00:00:00+00:00"
+
+- model: "main.Membership"
+  pk: 4
+  fields:
+    stock: 2
+    member: 2
+    date_joined: "2019-04-04"
+    role: "employee"
+    created_date: "2019-04-04 00:00:00+00:00"
+    modified_date: "2019-04-04 00:00:00+00:00"
+
+- model: "main.Membership"
+  pk: 5
+  fields:
+    stock: 2
+    member: 3
+    date_joined: "2019-04-10"
+    role: "manager"
+    created_date: "2019-04-10 00:00:00+00:00"
+    modified_date: "2019-04-10 00:00:00+00:00"
+
+- model: "main.Membership"
+  pk: 6
+  fields:
+    stock: 2
+    member: 4
+    date_joined: "2019-05-10"
+    role: "employee"
+    created_date: "2019-05-10 00:00:00+00:00"
+    modified_date: "2019-05-10 00:00:00+00:00"

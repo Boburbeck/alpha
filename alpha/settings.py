@@ -43,8 +43,10 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-     'rest_framework',
-     'rest_framework.authtoken',
+    'rest_framework',
+    'rest_framework.authtoken',
+    'django_filters',
+
 ] + PROJECT_APPS
 
 AUTH_USER_MODEL = 'main.User'
@@ -54,6 +56,11 @@ REST_FRAMEWORK = {
         'rest_framework.authentication.BasicAuthentication',
         'rest_framework.authentication.SessionAuthentication',
         'rest_framework.authentication.TokenAuthentication'
+    ),
+    'DEFAULT_FILTER_BACKENDS': (
+        'django_filters.rest_framework.DjangoFilterBackend',
+        'rest_framework.filters.OrderingFilter',
+        'rest_framework.filters.SearchFilter',
     ),
     'DEFAULT_PAGINATION_CLASS': 'main.utils.pagination.PageNumberPagination',
     'PAGE_SIZE': 10

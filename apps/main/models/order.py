@@ -5,7 +5,7 @@ from django.utils.translation import gettext as _
 from main.models import BaseModel
 from main.models import BaseMeta
 from main.models import DeleteMixin
-from stats.managers import OrderManager
+from main.managers import OrderManager
 
 
 class Order(BaseModel, DeleteMixin):

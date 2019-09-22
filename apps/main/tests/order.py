@@ -14,7 +14,7 @@ from main.tests.test_users import get_token
 class OrderCrudTest(APITestCase):
     fixtures = [
         'users.yaml',
-        'stocks.yaml',
+        'categories.yaml',
         'clients.yaml',
         'products.yaml',
         'sold_costs.yaml',

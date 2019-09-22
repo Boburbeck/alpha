@@ -22,3 +22,11 @@ def init_order(order: Order):
     # order.total_price += order.delivery_price or Decimal(0)
 
     order.internal_total_price = order.total_price
+
+
+def is_int(num: str):
+    try:
+        int(num)
+        return True
+    except ValueError:
+        return False
