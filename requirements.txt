@@ -1,0 +1,8 @@
+Django==2.2.5
+django-filter==2.2.0
+djangorestframework==3.10.3
+psycopg2-binary==2.8.3
+pycodestyle==2.5.0
+pytz==2019.2
+PyYAML==5.1.2
+sqlparse==0.3.0

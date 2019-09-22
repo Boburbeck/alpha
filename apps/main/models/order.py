@@ -5,6 +5,7 @@ from django.utils.translation import gettext as _
 from main.models import BaseModel
 from main.models import BaseMeta
 from main.models import DeleteMixin
+from main.managers import OrderManager
 
 
 class Order(BaseModel, DeleteMixin):
@@ -49,6 +50,7 @@ class Order(BaseModel, DeleteMixin):
     created_by = models.ForeignKey('main.User', on_delete=models.PROTECT, related_name='created_orders')
     updated_by = models.ForeignKey('main.User', on_delete=models.PROTECT, related_name='updated_orders', null=True)
     order_number = models.IntegerField(unique=True, null=True)
+    objects = OrderManager()
 
     class Meta(BaseMeta):
         verbose_name = 'Order'

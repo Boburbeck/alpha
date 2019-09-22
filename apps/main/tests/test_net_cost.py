@@ -64,7 +64,6 @@ class NetCostCrudTest(APITestCase):
         self.assertEqual(response.status_code, status.HTTP_400_BAD_REQUEST)
         self.assertEqual(response.data['price'][0], 'This field is required')
 
-
     def test_is_active(self):
         url = reverse(self.detail_url, kwargs={'pk': 1})
         response = self.client.get(url)
