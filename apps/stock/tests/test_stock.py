@@ -122,7 +122,7 @@ class StockEmployeeTest(APITestCase):
         self.assertEqual(response.status_code, status.HTTP_200_OK)
         self.assertEqual(len(response.data['employees']), 3)
 
-        url = '%sadd_employees' % reverse(self.detail_url, kwargs={"pk": 2})
+        url = '%sadd_employees/' % reverse(self.detail_url, kwargs={"pk": 2})
         response = self.client.put(url, data=data, format='json')
 
         self.assertEqual(response.status_code, status.HTTP_200_OK)

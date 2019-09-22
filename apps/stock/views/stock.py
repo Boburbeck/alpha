@@ -24,7 +24,7 @@ class StockModelViewSet(viewsets.ModelViewSet):
             return StockListDetailSerializer
         return StockModelSerializer
 
-    @action(methods=["POST"], detail=True)
+    @action(methods=["PUT"], detail=True)
     def add_employees(self, request, pk=None):
         stock = self.get_object()
         serializer = StockEmployeeSerializer(instance=stock, data=request.data)

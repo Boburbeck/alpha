@@ -79,11 +79,32 @@ class StockListDetailSerializer(serializers.ModelSerializer):
         return super(StockListDetailSerializer, self).to_representation(instance)
 
 
-class StockEmployeeSerializer(serializers.Serializer):
-    from main.models import User
-    employees = serializers.PrimaryKeyRelatedField(queryset=User.objects.all())
+# class StockEmployeeSerializer(serializers.ListSerializer):
+#     employees = serializers.ListField(child=serializers.IntegerField(min_value=1))
+#
+#     def update(self, instance: Stock, validated_data):
+#         employees = validated_data['employees']
+#         instance.employees = employees
+#         instance.save()
+#         return instance
+
+class StockEmployeeSerializer(serializers.ModelSerializer):
+    # employees = UserSelectSerializer(many=True, read_only=True)
+
+    class Meta:
+        model = Stock
+        fields = (
+            'id',
+            'name',
+            'address',
+            'employees',
+            'created_by',
+            'created_date',
+        )
+        read_only_fields = ("created_by", 'name', 'address')
 
     def update(self, instance: Stock, validated_data):
-        employees = validated_data['employees']
-        instance.employees.add(employees)
+        employees = validated_data.get('employees', [])
+        for employee in employees:
+            instance.employees.add(employee)
         return instance
