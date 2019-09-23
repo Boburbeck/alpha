@@ -1,6 +1,7 @@
 from django.db import models
 # Project
 from main.models import (BaseMeta, BaseModel, DeleteMixin)
+from main.managers import ProductBalanceManager
 
 
 class Product(DeleteMixin, BaseModel):
@@ -21,11 +22,12 @@ class Product(DeleteMixin, BaseModel):
         verbose_name_plural = 'Products'
 
 
-class ProductBalance(BaseModel):
-    balance = models.DecimalField(max_digits=20, decimal_places=9)
-    defect = models.DecimalField(max_digits=20, decimal_places=9)
+class ProductBalance(BaseModel, DeleteMixin):
+    balance = models.DecimalField(max_digits=20, decimal_places=9, default=0)
+    defect = models.DecimalField(max_digits=20, decimal_places=9, default=0)
     product = models.ForeignKey('main.Product', on_delete=models.CASCADE, related_name='product_balances')
     stock = models.ForeignKey('main.Stock', on_delete=models.PROTECT, related_name='product_balances')
+    objects = ProductBalanceManager()
 
     def __str__(self):
         return str(self.id)
