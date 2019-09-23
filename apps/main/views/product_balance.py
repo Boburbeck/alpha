@@ -1,5 +1,6 @@
 from rest_framework import viewsets
 from rest_framework.decorators import action
+from rest_framework.response import Response
 
 from main.serializers import ProductBalanceModelSerializer
 from main.serializers import ProductListDetailSerializer
@@ -24,8 +25,3 @@ class ProductBalanceModelViewSet(viewsets.ModelViewSet):
     def get_queryset(self):
         queryset = ProductBalance.objects.products()
         return queryset
-
-
-    # @action(methods=["GET"], detail=False)
-    # def by_product(self, request):
-    #
