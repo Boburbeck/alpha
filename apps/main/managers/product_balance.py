@@ -7,8 +7,6 @@ from main.managers import BaseManager
 
 class ProductBalanceManager(BaseManager):
     def products(self):
-        from main.models import Product, Stock
-
         availability = F('total_balance') - F('total_defect')
 
         query = self

@@ -36,13 +36,11 @@ class ProductBalanceModelSerializer(serializers.ModelSerializer):
 
 
 class ProductListDetailSerializer(serializers.Serializer):
-    from main.models import Stock, Product
-    # id = serializers.IntegerField()
     total_balance = serializers.DecimalField(max_digits=20, decimal_places=9)
     total_defect = serializers.DecimalField(max_digits=20, decimal_places=9)
     available = serializers.DecimalField(max_digits=20, decimal_places=9)
 
     def to_representation(self, instance):
         self.fields['product'] = serializers.CharField(source="product_id")
-        self.fields['stock'] = serializers.CharField(source="product_id")
+        self.fields['stock'] = serializers.CharField(source="stock_id")
         return super(ProductListDetailSerializer, self).to_representation(instance)
