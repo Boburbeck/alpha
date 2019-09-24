@@ -5,3 +5,5 @@ from main.views.net_cost import NetCostModelViewSet
 from main.views.sold_cost import SoldCostModelViewSet
 from main.views.order import OrderModelViewSet
 from main.views.product_balance import ProductBalanceModelViewSet
+from main.views.category import CategoryModelViewSet
+from main.views.product import ProductModelViewSet
