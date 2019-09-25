@@ -25,6 +25,7 @@ class Product(DeleteMixin, BaseModel):
 class ProductBalance(BaseModel, DeleteMixin):
     balance = models.DecimalField(max_digits=20, decimal_places=9, default=0)
     defect = models.DecimalField(max_digits=20, decimal_places=9, default=0)
+    sold = models.DecimalField(max_digits=20, decimal_places=9, default=0)
     product = models.ForeignKey('main.Product', on_delete=models.CASCADE, related_name='product_balances')
     stock = models.ForeignKey('main.Stock', on_delete=models.PROTECT, related_name='product_balances')
     objects = ProductBalanceManager()

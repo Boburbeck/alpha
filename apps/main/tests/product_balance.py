@@ -39,7 +39,8 @@ class ProductBalanceCrudTest(APITestCase):
         self.assertEqual(response.status_code, status.HTTP_200_OK)
         self.assertEqual(response.data['results'][0]['total_balance'], '27.000000000')
         self.assertEqual(response.data['results'][0]['total_defect'], '4.000000000')
-        self.assertEqual(response.data['results'][0]['available'], '23.000000000')
+        self.assertEqual(response.data['results'][0]['total_sold'], '3.000000000')
+        self.assertEqual(response.data['results'][0]['available'], '20.000000000')
         self.assertEqual(response.data['results'][0]['product'], '1')
         self.assertEqual(response.data['results'][0]['stock'], '1')
 
@@ -51,7 +52,8 @@ class ProductBalanceCrudTest(APITestCase):
         self.assertEqual(len(response.data['results']), 7)
         self.assertEqual(response.data['results'][3]['total_balance'], '59.000000000')
         self.assertEqual(response.data['results'][3]['total_defect'], '9.000000000')
-        self.assertEqual(response.data['results'][3]['available'], '50.000000000')
+        self.assertEqual(response.data['results'][3]['total_sold'], '10.000000000')
+        self.assertEqual(response.data['results'][3]['available'], '40.000000000')
         self.assertEqual(response.data['results'][3]['product'], '4')
         self.assertEqual(response.data['results'][3]['stock'], '1')
 
@@ -63,7 +65,8 @@ class ProductBalanceCrudTest(APITestCase):
         self.assertEqual(len(response.data['results']), 2)
         self.assertEqual(response.data['results'][0]['total_balance'], '59.000000000')
         self.assertEqual(response.data['results'][0]['total_defect'], '9.000000000')
-        self.assertEqual(response.data['results'][0]['available'], '50.000000000')
+        self.assertEqual(response.data['results'][0]['total_sold'], '10.000000000')
+        self.assertEqual(response.data['results'][0]['available'], '40.000000000')
         self.assertEqual(response.data['results'][0]['product'], '4')
         self.assertEqual(response.data['results'][0]['stock'], '1')
 

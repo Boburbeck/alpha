@@ -12,6 +12,7 @@ class ProductBalanceSelectSerializer(serializers.ModelSerializer):
         fields = (
             'id',
             'balance',
+            'sold',
             'product',
             'stock',
         )
@@ -24,6 +25,7 @@ class ProductBalanceModelSerializer(serializers.ModelSerializer):
             'id',
             'balance',
             'defect',
+            'sold',
             'product',
             'stock',
             'created_date'
@@ -38,6 +40,7 @@ class ProductBalanceModelSerializer(serializers.ModelSerializer):
 class ProductListDetailSerializer(serializers.Serializer):
     total_balance = serializers.DecimalField(max_digits=20, decimal_places=9)
     total_defect = serializers.DecimalField(max_digits=20, decimal_places=9)
+    total_sold = serializers.DecimalField(max_digits=20, decimal_places=9)
     available = serializers.DecimalField(max_digits=20, decimal_places=9)
 
     def to_representation(self, instance):

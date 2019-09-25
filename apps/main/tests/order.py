@@ -15,6 +15,7 @@ class OrderCrudTest(APITestCase):
     fixtures = [
         'users.yaml',
         'categories.yaml',
+        'stocks.yaml',
         'clients.yaml',
         'products.yaml',
         'sold_costs.yaml',
@@ -30,9 +31,9 @@ class OrderCrudTest(APITestCase):
         "order_number": 789456,
         "total_balance": "12000",
         "products": [
-            {"product": 1, "amount": "3"},
-            {"product": 2, "amount": "4"},
-            {"product": 3, "amount": "2"},
+            {"product": 1, 'stock': 1, "amount": "3"},
+            {"product": 2, 'stock': 1, "amount": "4"},
+            {"product": 3, 'stock': 1, "amount": "2"},
         ]
     }
 

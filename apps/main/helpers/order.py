@@ -1,3 +1,5 @@
+from decimal import Decimal
+
 from main.models import Order
 
 
@@ -19,7 +21,9 @@ def init_order_product(order_product, order: Order):
 def init_order(order: Order):
     order_products = order.products.select_related('product').all()
     order.total_price = sum(p.price for p in order_products)
-    # order.total_price += order.delivery_price or Decimal(0)
+    if order.deliver:
+        order.internal_delivery_price = order.delivery_price
+        order.total_price += order.delivery_price or Decimal(0)
 
     order.internal_total_price = order.total_price
 
