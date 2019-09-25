@@ -1,6 +1,7 @@
 Django==2.2.5
 django-filter==2.2.0
 djangorestframework==3.10.3
+djangorestframework-filters==0.11.1
 psycopg2-binary==2.8.3
 pycodestyle==2.5.0
 pytz==2019.2

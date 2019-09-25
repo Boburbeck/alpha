@@ -17,3 +17,4 @@ from main.serializers.order_product import OrderProductSelectSerializer
 from main.serializers.order_product import OrderProductModelSerializer
 from main.serializers.client import ClientSelectSerializer
 from main.serializers.order import OrderModelSerializer
+from main.serializers.order import OrderChangeStatusSerializer

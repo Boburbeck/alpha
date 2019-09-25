@@ -12,12 +12,14 @@ class Order(BaseModel, DeleteMixin):
     READY = '1'
     GIVEN = '2'
     DELIVERED = '3'
-    CANCELLED = '4'
+    DONE = '4'
+    CANCELLED = '5'
 
     ORDER_STATUS = (
         (READY, _('Ready')),
         (GIVEN, _('Transferred to the delivery department')),
         (DELIVERED, _('Delivered')),
+        (DONE, _('Done')),
         (CANCELLED, _('Order cancelled')),
     )
 

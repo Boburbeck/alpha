@@ -5,6 +5,7 @@ from django.utils.translation import gettext as _
 from main.models import Order, OrderProduct
 from main.helpers import order_product_price
 from main.helpers import product_availability
+from main.helpers import init_create_product_balance
 
 
 class OrderProductSelectSerializer(serializers.ModelSerializer):
@@ -39,6 +40,8 @@ class OrderProductModelSerializer(serializers.ModelSerializer):
             self._errors.update({'price': _('This field should not be less than 1 or be empty')})
 
         available = product_availability(product, stock)
+        if available.get('available', 0) < attrs.get("amount"):
+            self._errors.update({'product_balance': _('There is not enough product in the stock')})
 
         if self._errors:
             raise serializers.ValidationError(self._errors)
@@ -59,4 +62,5 @@ class OrderProductModelSerializer(serializers.ModelSerializer):
             price=price,
             internal_price=price,
         )
+        init_create_product_balance(stock=stock, product=product, amount=amount)
         return order_product

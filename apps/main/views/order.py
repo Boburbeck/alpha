@@ -1,6 +1,9 @@
 from rest_framework import viewsets
+from rest_framework.decorators import action
+from rest_framework.response import Response
 
 from main.serializers import OrderModelSerializer
+from main.serializers import OrderChangeStatusSerializer
 from main.models import Order
 
 
@@ -38,3 +41,11 @@ class OrderModelViewSet(viewsets.ModelViewSet):
     serializer_class = OrderModelSerializer
     queryset = Order.objects.all()
     model = Order
+
+    @action(methods=['PUT'], detail=True)
+    def order_status(self, request, pk=None):
+        order = self.get_object()
+        serializer = OrderChangeStatusSerializer(instance=order, data=request.data)
+        serializer.is_valid(raise_exception=True)
+        serializer.save()
+        return Response(serializer.data)
