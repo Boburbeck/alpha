@@ -7,4 +7,4 @@ fennec/settings_dev.py
 .DS_Store
 .vscode
 pytest.ini
-.venv
+__pycache__

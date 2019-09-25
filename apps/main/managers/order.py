@@ -41,3 +41,18 @@ class OrderManager(BaseManager):
         user = user.values('id', 'first_name', 'last_name', 'sales')
         user = user.exclude(sales__isnull=True)
         return user
+
+    def by_stock(self):
+        from main.models import Stock
+        from main.models import OrderProduct
+        stock = Stock.objects.all()
+        output = DecimalField(max_digits=20, decimal_places=9)
+        order_product = OrderProduct.objects.filter(stock=OuterRef("id"))
+        order_product = order_product.order_by()
+        order_product = order_product.annotate(total=Sum('internal_price'))
+        order_product = order_product.values('total')
+        order_product.query.group_by = []
+
+        stock = stock.annotate(total=Subquery(order_product[:1], output_field=output))
+        stock = stock.values('id', 'name', 'total')
+        return stock

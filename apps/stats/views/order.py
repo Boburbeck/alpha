@@ -7,6 +7,7 @@ from stats.serializers import OrderStatsSerializer
 from stats.serializers import OrderSubquery
 from stats.serializers import OrderSubqueryCashier
 from stats.serializers import ValidateCashier
+from stats.serializers import StockSubquerySerializer
 
 
 class OrderStatsViewSet(viewsets.GenericViewSet, mixins.ListModelMixin, ):
@@ -34,4 +35,12 @@ class OrderStatsViewSet(viewsets.GenericViewSet, mixins.ListModelMixin, ):
         order = order.order_by('-sales')
 
         serializer = OrderSubqueryCashier(order, many=True)
+        return Response(serializer.data)
+
+    @action(methods=["GET"], detail=False, )
+    def sub_by_stock(self, request):
+        stock = Order.objects.by_stock()
+        stock = stock.order_by('-total')
+
+        serializer = StockSubquerySerializer(stock, many=True)
         return Response(serializer.data)
