@@ -3,7 +3,6 @@ from decimal import Decimal
 from main.models import Order
 
 
-
 def init_order_product(order_product, order: Order):
     from main.models import OrderProduct
     from main.helpers import order_product_price
