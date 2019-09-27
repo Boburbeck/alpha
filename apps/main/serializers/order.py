@@ -57,8 +57,6 @@ class OrderModelSerializer(serializers.ModelSerializer):
         delivery_man = data.get('delivery_man', None)
         delivery_date = data.get('delivery_date', None)
         delivery_price = data.get('delivery_price', None)
-        delivered = data.get('delivered', False)
-        total_balance = data.get('total_balance')
         products = data.get('products')
         order = Order.objects.create(
             order_number=order_number,
@@ -69,8 +67,6 @@ class OrderModelSerializer(serializers.ModelSerializer):
             delivery_man=delivery_man,
             delivery_date=delivery_date,
             delivery_price=delivery_price,
-            delivered=delivered,
-            total_balance=total_balance,
             total_price=0,
             created_by=self.user,
         )
@@ -83,3 +79,15 @@ class OrderModelSerializer(serializers.ModelSerializer):
         self.fields['cashier'] = UserSelectSerializer()
         self.fields['client'] = ClientSelectSerializer()
         return super(OrderModelSerializer, self).to_representation(instance)
+
+
+class OrderChangeStatusSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = Order
+        fields = (
+            'id',
+            'order_number',
+            'status',
+            'modified_date',
+        )
+        read_only_fields = ("order_number",)

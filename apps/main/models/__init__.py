@@ -4,6 +4,7 @@ from main.models.base_model import DeleteMixin
 from main.models.user import User
 from main.models.category import Category
 from main.models.product import Product
+from main.models.product import ProductBalance
 from main.models.client import Client
 from main.models.order import Order
 from main.models.order import OrderProduct
@@ -11,3 +12,4 @@ from main.models.net_cost import NetCost
 from main.models.sold_cost import SoldCost
 from main.models.stock import Stock
 from main.models.stock import Membership
+from main.models.transaction import Transaction

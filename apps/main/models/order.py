@@ -12,12 +12,14 @@ class Order(BaseModel, DeleteMixin):
     READY = '1'
     GIVEN = '2'
     DELIVERED = '3'
-    CANCELLED = '4'
+    DONE = '4'
+    CANCELLED = '5'
 
     ORDER_STATUS = (
         (READY, _('Ready')),
         (GIVEN, _('Transferred to the delivery department')),
         (DELIVERED, _('Delivered')),
+        (DONE, _('Done')),
         (CANCELLED, _('Order cancelled')),
     )
 
@@ -73,6 +75,7 @@ class Order(BaseModel, DeleteMixin):
 class OrderProduct(BaseModel, DeleteMixin):
     order = models.ForeignKey(Order, on_delete=models.CASCADE, related_name='products')
     product = models.ForeignKey('main.Product', on_delete=models.PROTECT, related_name='order_products')
+    stock = models.ForeignKey('main.Stock', on_delete=models.PROTECT, related_name='order_products')
     amount = models.DecimalField(max_digits=20, decimal_places=9)
 
     price = models.DecimalField(max_digits=20, decimal_places=9)

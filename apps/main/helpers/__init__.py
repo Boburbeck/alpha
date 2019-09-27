@@ -6,3 +6,5 @@ from main.helpers.order import init_order
 from main.helpers.user import init_set_permission
 from main.helpers.user import init_create_membership
 from main.helpers.order import is_int
+from main.helpers.product_balance import product_availability
+from main.helpers.product_balance import init_create_product_balance

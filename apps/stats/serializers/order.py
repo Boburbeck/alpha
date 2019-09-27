@@ -52,3 +52,9 @@ class OrderSubqueryCashier(serializers.Serializer):
 class ValidateCashier(serializers.Serializer):
     from main.models import User
     cashier = serializers.PrimaryKeyRelatedField(queryset=User.objects.all(), required=False)
+
+
+class StockSubquerySerializer(serializers.Serializer):
+    id = serializers.IntegerField()
+    name = serializers.CharField(max_length=255)
+    total = serializers.DecimalField(max_digits=20, decimal_places=9)

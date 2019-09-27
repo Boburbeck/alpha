@@ -1,0 +1,315 @@
+#Product Balances
+- model: "main.ProductBalance"
+  pk: 1
+  fields:
+    balance: "12"
+    defect: "2"
+    sold: "2"
+    product: 1
+    stock: 1
+    created_date: "2019-01-01 00:00:00+00:00"
+    modified_date: "2019-01-01 00:00:00+00:00"
+
+- model: "main.ProductBalance"
+  pk: 2
+  fields:
+    balance: "15"
+    defect: "2"
+    sold: "1"
+    product: 1
+    stock: 1
+    created_date: "2019-01-02 00:00:00+00:00"
+    modified_date: "2019-01-02 00:00:00+00:00"
+
+- model: "main.ProductBalance"
+  pk: 3
+  fields:
+    balance: "20"
+    defect: "4"
+    sold: "3"
+    product: 2
+    stock: 1
+    created_date: "2019-01-03 00:00:00+00:00"
+    modified_date: "2019-01-03 00:00:00+00:00"
+
+- model: "main.ProductBalance"
+  pk: 4
+  fields:
+    balance: "7"
+    sold: "0"
+    product: 2
+    stock: 1
+    created_date: "2019-01-05 00:00:00+00:00"
+    modified_date: "2019-01-05 00:00:00+00:00"
+
+- model: "main.ProductBalance"
+  pk: 5
+  fields:
+    balance: "8"
+    defect: "0"
+    product: 3
+    stock: 1
+    created_date: "2019-01-10 00:00:00+00:00"
+    modified_date: "2019-01-10 00:00:00+00:00"
+
+- model: "main.ProductBalance"
+  pk: 6
+  fields:
+    defect: "2"
+    sold: "0"
+    product: 3
+    stock: 1
+    created_date: "2019-01-12 00:00:00+00:00"
+    modified_date: "2019-01-12 00:00:00+00:00"
+
+- model: "main.ProductBalance"
+  pk: 7
+  fields:
+    balance: "25"
+    defect: "2"
+    sold: "7"
+    product: 3
+    stock: 1
+    created_date: "2019-01-15 00:00:00+00:00"
+    modified_date: "2019-01-15 00:00:00+00:00"
+
+- model: "main.ProductBalance"
+  pk: 8
+  fields:
+    balance: "20"
+    defect: "4"
+    sold: "10"
+    product: 4
+    stock: 1
+    created_date: "2019-01-20 00:00:00+00:00"
+    modified_date: "2019-01-20 00:00:00+00:00"
+
+- model: "main.ProductBalance"
+  pk: 9
+  fields:
+    balance: "32"
+    defect: "5"
+    sold: "0"
+    product: 4
+    stock: 1
+    created_date: "2019-02-01 00:00:00+00:00"
+    modified_date: "2019-02-01 00:00:00+00:00"
+
+- model: "main.ProductBalance"
+  pk: 10
+  fields:
+    balance: "7"
+    sold: "0"
+    product: 4
+    stock: 1
+    created_date: "2019-02-04 00:00:00+00:00"
+    modified_date: "2019-02-04 00:00:00+00:00"
+
+- model: "main.ProductBalance"
+  pk: 11
+  fields:
+    balance: "9"
+    defect: "1"
+    sold: "10"
+    product: 5
+    stock: 1
+    created_date: "2019-02-05 00:00:00+00:00"
+    modified_date: "2019-02-05 00:00:00+00:00"
+
+- model: "main.ProductBalance"
+  pk: 12
+  fields:
+    balance: "54"
+    defect: "12"
+    sold: "0"
+    product: 5
+    stock: 1
+    created_date: "2019-02-07 00:00:00+00:00"
+    modified_date: "2019-02-07 00:00:00+00:00"
+
+- model: "main.ProductBalance"
+  pk: 13
+  fields:
+    balance: "21"
+    sold: "0"
+    product: 6
+    stock: 1
+    created_date: "2019-02-10 00:00:00+00:00"
+    modified_date: "2019-02-10 00:00:00+00:00"
+
+- model: "main.ProductBalance"
+  pk: 14
+  fields:
+    balance: "15"
+    sold: "0"
+    product: 7
+    stock: 1
+    created_date: "2019-02-15 00:00:00+00:00"
+    modified_date: "2019-02-15 00:00:00+00:00"
+
+- model: "main.ProductBalance"
+  pk: 15
+  fields:
+    defect: "7"
+    sold: "3"
+    product: 7
+    stock: 1
+    created_date: "2019-02-16 00:00:00+00:00"
+    modified_date: "2019-02-16 00:00:00+00:00"
+
+- model: "main.ProductBalance"
+  pk: 16
+  fields:
+    balance: "10"
+    defect: "2"
+    sold: "3"
+    product: 7
+    stock: 1
+    created_date: "2019-02-20 00:00:00+00:00"
+    modified_date: "2019-02-20 00:00:00+00:00"
+
+- model: "main.ProductBalance"
+  pk: 17
+  fields:
+    balance: "15"
+    sold: "0"
+    product: 7
+    stock: 1
+    created_date: "2019-02-22 00:00:00+00:00"
+    modified_date: "2019-02-22 00:00:00+00:00"
+
+- model: "main.ProductBalance"
+  pk: 18
+  fields:
+    defect: "4"
+    sold: "0"
+    product: 7
+    stock: 1
+    created_date: "2019-02-25 00:00:00+00:00"
+    modified_date: "2019-02-25 00:00:00+00:00"
+
+- model: "main.ProductBalance"
+  pk: 19
+  fields:
+    balance: "7"
+    defect: "4"
+    sold: "1"
+    product: 1
+    stock: 2
+    created_date: "2019-03-01 00:00:00+00:00"
+    modified_date: "2019-03-01 00:00:00+00:00"
+
+- model: "main.ProductBalance"
+  pk: 20
+  fields:
+    balance: "10"
+    defect: "1"
+    sold: "1"
+    product: 1
+    stock: 2
+    created_date: "2019-03-03 00:00:00+00:00"
+    modified_date: "2019-03-03 00:00:00+00:00"
+
+- model: "main.ProductBalance"
+  pk: 21
+  fields:
+    balance: "8"
+    sold: "0"
+    product: 2
+    stock: 2
+    created_date: "2019-03-05 00:00:00+00:00"
+    modified_date: "2019-03-05 00:00:00+00:00"
+
+- model: "main.ProductBalance"
+  pk: 22
+  fields:
+    balance: "15"
+    defect: "2"
+    sold: "4"
+    product: 3
+    stock: 2
+    created_date: "2019-03-10 00:00:00+00:00"
+    modified_date: "2019-03-10 00:00:00+00:00"
+
+- model: "main.ProductBalance"
+  pk: 23
+  fields:
+    balance: "20"
+    defect: "5"
+    sold: "4"
+    product: 3
+    stock: 2
+    created_date: "2019-03-11 00:00:00+00:00"
+    modified_date: "2019-03-11 00:00:00+00:00"
+
+- model: "main.ProductBalance"
+  pk: 24
+  fields:
+    balance: "7"
+    defect: "3"
+    sold: "0"
+    product: 4
+    stock: 2
+    created_date: "2019-03-15 00:00:00+00:00"
+    modified_date: "2019-03-15 00:00:00+00:00"
+
+- model: "main.ProductBalance"
+  pk: 25
+  fields:
+    balance: "15"
+    sold: "2"
+    product: 5
+    stock: 2
+    created_date: "2019-03-20 00:00:00+00:00"
+    modified_date: "2019-03-20 00:00:00+00:00"
+
+- model: "main.ProductBalance"
+  pk: 26
+  fields:
+    balance: "7"
+    sold: "1"
+    product: 5
+    stock: 2
+    created_date: "2019-03-21 00:00:00+00:00"
+    modified_date: "2019-03-21 00:00:00+00:00"
+
+- model: "main.ProductBalance"
+  pk: 27
+  fields:
+    balance: "15"
+    sold: "2"
+    product: 6
+    stock: 2
+    created_date: "2019-03-22 00:00:00+00:00"
+    modified_date: "2019-03-22 00:00:00+00:00"
+
+- model: "main.ProductBalance"
+  pk: 28
+  fields:
+    defect: "4"
+    sold: "2"
+    product: 6
+    stock: 2
+    created_date: "2019-03-25 00:00:00+00:00"
+    modified_date: "2019-03-25 00:00:00+00:00"
+
+- model: "main.ProductBalance"
+  pk: 29
+  fields:
+    defect: "7"
+    sold: "0"
+    product: 6
+    stock: 2
+    created_date: "2019-03-29 00:00:00+00:00"
+    modified_date: "2019-03-29 00:00:00+00:00"
+
+- model: "main.ProductBalance"
+  pk: 30
+  fields:
+    balance: "18"
+    defect: "4"
+    sold: "4"
+    product: 7
+    stock: 2
+    created_date: "2019-04-01 00:00:00+00:00"
+    modified_date: "2019-04-01 00:00:00+00:00"

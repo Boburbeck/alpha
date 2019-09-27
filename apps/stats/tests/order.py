@@ -14,6 +14,7 @@ from main.tests.test_users import get_token
 class OrderStatisticsTest(APITestCase):
     fixtures = [
         'users.yaml',
+        'categories.yaml',
         'stocks.yaml',
         'clients.yaml',
         'products.yaml',
@@ -66,51 +67,22 @@ class OrderStatisticsTest(APITestCase):
 
     def test_by_single_cashier(self):
         url = '%ssub_by_cashier/?cashier=4' % reverse(self.list_url)
-        response = self.client.get(url)
+        response = self.client.get(url, )
 
         self.assertEqual(response.status_code, status.HTTP_200_OK)
         self.assertEqual(response.data[0]['id'], 4)
         self.assertEqual(response.data[0]['first_name'], 'Firstname4')
         self.assertEqual(response.data[0]['sales'], '155900.000000000')
 
-    # def test_create(self):
-    #     url = reverse(self.list_url)
-    #     response = self.client.post(url, data=self.data, format='json')
-    #     self.assertEqual(response.status_code, status.HTTP_201_CREATED)
-    #     self.assertEqual(response.data['total_price'], '63000.000000000')
-    #     self.assertEqual(response.data['id'], 7)
-    #
-    # def test_crate_fail(self):
-    #     data = {"price": "1500"}
-    #     url = reverse(self.list_url)
-    #     response = self.client.post(url, data=data, format='json')
-    #     self.assertEqual(response.status_code, status.HTTP_400_BAD_REQUEST)
-    #     self.assertEqual(response.data['product'][0], 'This field is required.')
-    #
-    #     data = {"product": 1}
-    #     url = reverse(self.list_url)
-    #     response = self.client.post(url, data=data, format='json')
-    #     self.assertEqual(response.status_code, status.HTTP_400_BAD_REQUEST)
-    #     self.assertEqual(response.data['price'][0], 'This field is required')
-    #
-    # def test_is_active(self):
-    #     url = reverse(self.detail_url, kwargs={'pk': 1})
-    #     response = self.client.get(url)
-    #     self.assertEqual(response.status_code, status.HTTP_200_OK, response.data)
-    #     self.assertEqual(response.data['id'], 1)
-    #     self.assertEqual(response.data['is_active'], True)
-    #
-    #     url = reverse(self.list_url)
-    #     response = self.client.post(url, data=self.data, format='json')
-    #     self.assertEqual(response.status_code, status.HTTP_201_CREATED)
-    #
-    #     url = reverse(self.detail_url, kwargs={'pk': 1})
-    #     response = self.client.get(url)
-    #     self.assertEqual(response.status_code, status.HTTP_200_OK, response.data)
-    #     self.assertEqual(response.data['id'], 1)
-    #     self.assertEqual(response.data['is_active'], False)
-    #
-    # def test_delete(self):
-    #     url = reverse(self.detail_url, kwargs={'pk': 5})
-    #     response = self.client.delete(url)
-    #     self.assertEqual(response.status_code, status.HTTP_204_NO_CONTENT)
+    def test_by_stock(self):
+        url = '%ssub_by_stock/' % reverse(self.list_url)
+        response = self.client.get(url, )
+
+        self.assertEqual(response.status_code, status.HTTP_200_OK)
+        self.assertEqual(response.data[0]['id'], 1)
+        self.assertEqual(response.data[0]['name'], 'Test Stock 1')
+        self.assertEqual(response.data[0]['total'], '195400.000000000')
+
+        self.assertEqual(response.data[1]['id'], 2)
+        self.assertEqual(response.data[1]['name'], 'Test Stock 2')
+        self.assertEqual(response.data[1]['total'], '146900.000000000')
