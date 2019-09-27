@@ -1,0 +1,116 @@
+#Transaction
+- model: "main.Transaction"
+  pk: 1
+  fields:
+    income_amount: "48500"
+    spent_amount: "0"
+    transaction_type: "1"
+    client: 2
+    order: 1
+    stock: 1
+    comment: "No Comment"
+    created_by: 1
+    updated_by: 1
+    created_date: "2019-03-01 00:00:00+00:00"
+    modified_date: "2019-03-01 00:00:00+00:00"
+
+- model: "main.Transaction"
+  pk: 2
+  fields:
+    income_amount: "30000"
+    spent_amount: "0"
+    transaction_type: "1"
+    client: 2
+    order: 2
+    stock: 1
+    comment: "No Comment"
+    created_by: 1
+    updated_by: 1
+    created_date: "2019-04-01 00:00:00+00:00"
+    modified_date: "2019-04-01 00:00:00+00:00"
+
+- model: "main.Transaction"
+  pk: 3
+  fields:
+    income_amount: "64900"
+    spent_amount: "0"
+    transaction_type: "1"
+    client: 3
+    order: 3
+    stock: 1
+    comment: "No Comment"
+    created_by: 1
+    updated_by: 1
+    created_date: "2019-04-20 00:00:00+00:00"
+    modified_date: "2019-04-20 00:00:00+00:00"
+
+- model: "main.Transaction"
+  pk: 4
+  fields:
+    income_amount: "17000"
+    spent_amount: "0"
+    transaction_type: "1"
+    client: 3
+    order: 4
+    stock: 1
+    comment: "No Comment"
+    created_by: 1
+    updated_by: 1
+    created_date: "2019-04-25 00:00:00+00:00"
+    modified_date: "2019-04-25 00:00:00+00:00"
+
+- model: "main.Transaction"
+  pk: 5
+  fields:
+    income_amount: "48500"
+    spent_amount: "0"
+    transaction_type: "1"
+    client: 3
+    order: 5
+    stock: 2
+    comment: "No Comment"
+    created_by: 1
+    updated_by: 1
+    created_date: "2019-05-05 00:00:00+00:00"
+    modified_date: "2019-05-05 00:00:00+00:00"
+
+- model: "main.Transaction"
+  pk: 6
+  fields:
+    income_amount: "91000"
+    spent_amount: "0"
+    transaction_type: "1"
+    client: 1
+    order: 6
+    stock: 2
+    comment: "No Comment"
+    created_by: 1
+    updated_by: 1
+    created_date: "2019-06-01 00:00:00+00:00"
+    modified_date: "2019-06-01 00:00:00+00:00"
+
+- model: "main.Transaction"
+  pk: 7
+  fields:
+    income_amount: "0"
+    spent_amount: "17000"
+    transaction_type: "2"
+    stock: 1
+    comment: "No Comment"
+    created_by: 1
+    updated_by: 1
+    created_date: "2019-07-01 00:00:00+00:00"
+    modified_date: "2019-07-01 00:00:00+00:00"
+
+- model: "main.Transaction"
+  pk: 8
+  fields:
+    income_amount: "0"
+    spent_amount: "20000"
+    transaction_type: "2"
+    stock: 2
+    comment: "No Comment"
+    created_by: 1
+    updated_by: 1
+    created_date: "2019-08-01 00:00:00+00:00"
+    modified_date: "2019-08-01 00:00:00+00:00"

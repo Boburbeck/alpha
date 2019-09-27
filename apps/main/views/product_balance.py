@@ -14,6 +14,7 @@ class ProductBalanceModelViewSet(viewsets.ModelViewSet):
 
     serializer_class = ProductBalanceModelSerializer
     model = ProductBalance
+    filter_fields = ("stock", "product")
 
     def get_serializer_class(self):
         if self.action == 'list':

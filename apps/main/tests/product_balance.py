@@ -37,15 +37,44 @@ class ProductBalanceCrudTest(APITestCase):
         response = self.client.get(reverse(self.list_url))
 
         self.assertEqual(response.status_code, status.HTTP_200_OK)
-        self.assertEqual(len(response.data['results']), 10)
+        self.assertEqual(response.data['results'][0]['total_balance'], '27.000000000')
+        self.assertEqual(response.data['results'][0]['total_defect'], '4.000000000')
+        self.assertEqual(response.data['results'][0]['total_sold'], '3.000000000')
+        self.assertEqual(response.data['results'][0]['available'], '20.000000000')
+        self.assertEqual(response.data['results'][0]['product'], '1')
+        self.assertEqual(response.data['results'][0]['stock'], '1')
 
-    def test_detail(self):
-        url = reverse(self.detail_url, kwargs={'pk': 5})
+    def test_filter_by_stock(self):
+        url = "%s?stock=1" % reverse(self.list_url)
         response = self.client.get(url)
-        self.assertEqual(response.status_code, status.HTTP_200_OK, response.data)
-        self.assertEqual(response.data['id'], 5)
-        self.assertEqual(response.data['balance'], '8.000000000')
-        self.assertEqual(response.data['defect'], '2.000000000')
+
+        self.assertEqual(response.status_code, status.HTTP_200_OK)
+        self.assertEqual(len(response.data['results']), 7)
+        self.assertEqual(response.data['results'][3]['total_balance'], '59.000000000')
+        self.assertEqual(response.data['results'][3]['total_defect'], '9.000000000')
+        self.assertEqual(response.data['results'][3]['total_sold'], '10.000000000')
+        self.assertEqual(response.data['results'][3]['available'], '40.000000000')
+        self.assertEqual(response.data['results'][3]['product'], '4')
+        self.assertEqual(response.data['results'][3]['stock'], '1')
+
+    def test_filter_by_product(self):
+        url = "%s?product=4" % reverse(self.list_url)
+        response = self.client.get(url)
+
+        self.assertEqual(response.status_code, status.HTTP_200_OK)
+        self.assertEqual(len(response.data['results']), 2)
+        self.assertEqual(response.data['results'][0]['total_balance'], '59.000000000')
+        self.assertEqual(response.data['results'][0]['total_defect'], '9.000000000')
+        self.assertEqual(response.data['results'][0]['total_sold'], '10.000000000')
+        self.assertEqual(response.data['results'][0]['available'], '40.000000000')
+        self.assertEqual(response.data['results'][0]['product'], '4')
+        self.assertEqual(response.data['results'][0]['stock'], '1')
+
+        self.assertEqual(response.data['results'][1]['total_balance'], '7.000000000')
+        self.assertEqual(response.data['results'][1]['total_defect'], '3.000000000')
+        self.assertEqual(response.data['results'][1]['available'], '4.000000000')
+        self.assertEqual(response.data['results'][1]['product'], '4')
+        self.assertEqual(response.data['results'][1]['stock'], '2')
 
     def test_create(self):
         url = reverse(self.list_url)
@@ -54,19 +83,3 @@ class ProductBalanceCrudTest(APITestCase):
         self.assertEqual(response.data['balance'], '14.000000000')
         self.assertEqual(response.data['defect'], '1.000000000')
         self.assertEqual(response.data['id'], 31)
-
-    def test_update(self):
-        url = reverse(self.detail_url, kwargs={'pk': 5})
-        response = self.client.get(url)
-        self.assertEqual(response.data['id'], 5)
-        self.assertEqual(response.data['balance'], '8.000000000')
-
-        response = self.client.put(url, data=self.data, format='json')
-        self.assertEqual(response.status_code, status.HTTP_200_OK)
-        self.assertEqual(response.data['id'], 5)
-        self.assertEqual(response.data['balance'], '14.000000000')
-
-    def test_delete(self):
-        url = reverse(self.detail_url, kwargs={'pk': 5})
-        response = self.client.delete(url)
-        self.assertEqual(response.status_code, status.HTTP_204_NO_CONTENT)
