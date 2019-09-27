@@ -1,0 +1,25 @@
+image: python:3.6
+
+before_script:
+  - "export BUILD_DIR=/alpha/"
+
+
+stages:
+  - build
+  - test
+
+
+test:
+  stage: test
+  script:
+    - "rm -rf ${BUILD_DIR}"
+    - "mkdir ${BUILD_DIR}"
+    - "cp -r `pwd`/* ${BUILD_DIR}/"
+    - "cp -r `pwd`/.git ${BUILD_DIR}/"
+    - "cd $BUILD_DIR"
+    - "pip install virtualenv"
+    - "virtualenv .venv"
+    - "source .venv/bin/activate"
+    - "pip install -r requirements.txt"
+    - "source .venv/bin/activate"
+    - "python manage.py test --no-input --settings alpha.settings_test"
