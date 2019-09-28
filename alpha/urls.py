@@ -16,9 +16,15 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path, include
 from rest_framework.authtoken import views
+from rest_framework.documentation import include_docs_urls
+from rest_framework.permissions import IsAuthenticated
 
+from rest_framework.schemas import get_schema_view
+
+schema_view = get_schema_view(title='Pastebin API')
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('api/v1/', include('apps.v1'), name='apps'),
     path('api/v1/main/api-token-auth/', views.obtain_auth_token, name='login'),
+    path('docs/', include_docs_urls(title='Alpha Service', permission_classes=[IsAuthenticated, ])),
 ]
