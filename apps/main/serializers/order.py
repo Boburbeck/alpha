@@ -42,7 +42,9 @@ class OrderModelSerializer(serializers.ModelSerializer):
 
     def __init__(self, *args, **kwargs):
         super(OrderModelSerializer, self).__init__(*args, **kwargs)
-        self.user = self.context.get('request').user
+        if self.context.get('request'):
+            self.user = self.context['request'].user
+
         self.view = self.context['view']
         if self.view.action != 'list':
             self.fields['products'] = OrderProductModelSerializer(many=True, required=True)

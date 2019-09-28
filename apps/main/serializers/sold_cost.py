@@ -28,7 +28,8 @@ class SoldCostModelSerializer(serializers.ModelSerializer):
 
     def __init__(self, *args, **kwargs):
         super(SoldCostModelSerializer, self).__init__(*args, **kwargs)
-        self.user = self.context.get('request').user
+        if self.context.get('request'):
+            self.user = self.context['request'].user
 
     def validate(self, attrs):
         self._errors = dict()
