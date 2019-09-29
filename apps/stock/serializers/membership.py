@@ -43,7 +43,8 @@ class MembershipModelSerializer(serializers.ModelSerializer):
 
     def __init__(self, *args, **kwargs):
         super(MembershipModelSerializer, self).__init__(*args, **kwargs)
-        self.user = self.context.get('request').user
+        if self.context.get('request'):
+            self.user = self.context['request'].user
 
     def create(self, validated_data):
         membership = Membership.objects.create(
