@@ -14,8 +14,9 @@ from main.tests.test_users import get_token
 class MembershipCRUDTest(APITestCase):
     fixtures = [
         'users.yaml',
-        'stocks.yaml',
         'memberships.yaml',
+        'stocks.yaml',
+
     ]
     data = dict(stock=2, member=4, date_joined='2019-09-22', role='manager')
 
