@@ -35,7 +35,8 @@ class StockModelSerializer(serializers.ModelSerializer):
 
     def __init__(self, *args, **kwargs):
         super(StockModelSerializer, self).__init__(*args, **kwargs)
-        self.user = self.context.get('request').user
+        if self.context.get('request'):
+            self.user = self.context['request'].user
 
     def create(self, validated_data):
         from main.models.stock import Membership

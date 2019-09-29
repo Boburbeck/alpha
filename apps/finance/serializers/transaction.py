@@ -35,7 +35,8 @@ class TransactionModelSerializer(serializers.ModelSerializer):
 
     def __init__(self, *args, **kwargs):
         super(TransactionModelSerializer, self).__init__(*args, **kwargs)
-        self.user = self.context.get('request').user
+        if self.context.get('request'):
+            self.user = self.context['request'].user
 
     def create(self, validated_data):
         income_amount = validated_data.get('income_amount', 0)
